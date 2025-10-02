@@ -25,7 +25,7 @@
 
 | Osztály neve   | Adattagok | Metódusok | Egyéb megjegyzések |
 |----------------|-----------|-----------|--------------------|
-| **LadaModell** | - felirata: `str`<br>- Nev: `str`<br>- benneVanEAKincs: `bool` | - getterek<br>- setterek<br>- konstruktor | A láda adatait tárolja |
+| **LadaModell** | - felirata: `str`<br>- Nev: `str`<br>- benneVanEAKincs: `bool`<br>- **IgazatMonddE: `bool`** | - getterek<br>- setterek<br>- konstruktor | A láda adatait tárolja; `IgazatMonddE` jelzi, hogy a láda felirata igaz-e |
 | **GuiLadaNezet** | - modell: `LadaModell` | - getter<br>- mutat() | Felhasználói felület megjelenítéséért felel |
 | **LadaVezerlo** | - modell: `LadaModell`<br>- nezet: `GuiLadaNezet` | - konstruktor (modell, nezet)<br>- megjelenit()<br>- feladat() | Az adatok és nézet összekapcsolása, vezérlés |
 | **Main** | *(nincs adattag)* | - konstruktor()<br>- main() | A program belépési pontja, innen indul minden |
@@ -40,9 +40,10 @@
 - `felirata: str` — A láda felirata  
 - `Nev: str` — A láda neve  
 - `benneVanEAKincs: bool` — Jelzi, hogy van-e kincs benne  
+- `IgazatMonddE: bool` — **Privát** jelző, hogy a láda felirata igaz állítást mond-e  
 
 **Metódusok:**
-- Getterek és setterek az adattagokhoz  
+- Getterek és setterek az adattagokhoz (beleértve `isIgazatMonddE()` / `setIgazatMonddE(boolean)`),  
 - Konstruktor az adattagok inicializálásához  
 
 ---
