@@ -1,5 +1,11 @@
 # Lada Projekt
 
+## Csapat tagok
+- Ilyés Borbála  
+- Fabu András  
+
+---
+
 ## Feladatleírás
 
 - 3 ládából kell választani, hogy melyikben van a kincs  
