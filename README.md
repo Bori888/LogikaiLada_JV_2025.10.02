@@ -131,3 +131,6 @@ A következő állítások alapján kell meghatározni, hogy hol van a kincs:
 ## Csapat tagok
 - Ilyés Borbála  
 - Fabu András
+
+<img width="488" height="556" alt="image" src="https://github.com/user-attachments/assets/622c48ba-d6a1-4648-95d0-20ad59cc8b7c" />
+
