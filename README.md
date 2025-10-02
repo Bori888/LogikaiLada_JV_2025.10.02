@@ -23,11 +23,12 @@
 
 ## Osztályok áttekintése
 
-| Osztály neve | Adattagok | Metódusok | Egyéb megjegyzések |
-|--------------|-----------|-----------|--------------------|
+| Osztály neve   | Adattagok | Metódusok | Egyéb megjegyzések |
+|----------------|-----------|-----------|--------------------|
 | **LadaModell** | - felirata: `str`<br>- Nev: `str`<br>- benneVanEAKincs: `bool` | - getterek<br>- setterek<br>- konstruktor | A láda adatait tárolja |
 | **GuiLadaNezet** | - modell: `LadaModell` | - getter<br>- mutat() | Felhasználói felület megjelenítéséért felel |
 | **LadaVezerlo** | - modell: `LadaModell`<br>- nezet: `GuiLadaNezet` | - konstruktor (modell, nezet)<br>- megjelenit()<br>- feladat() | Az adatok és nézet összekapcsolása, vezérlés |
+| **Main** | *(nincs adattag)* | - konstruktor<br>- main() | A program belépési pontja, innen indul minden |
 
 ---
 
@@ -70,10 +71,18 @@
 
 ---
 
-## Main
+### Main
 
-- Konstruktor inicializálás  
-- Fő program logika
+**Adattagok:**
+- *(nincs adattag)*  
+
+**Metódusok:**
+- `main()` — A program belépési pontja, innen indul minden  
+- Konstruktor — Az alapvető inicializálásokat végzi  
+
+**Feladat:**
+- Az alkalmazás indítása  
+- Modellek, nézet és vezérlő példányosítása  
 
 ---
 
@@ -95,4 +104,4 @@
 
 ## Csapat tagok
 - Ilyés Borbála  
-- Fabu András  
+- Fabu András
