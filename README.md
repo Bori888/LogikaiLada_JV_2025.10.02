@@ -77,6 +77,22 @@
 
 ---
 
+## Munkamegosztás
+
+| Feladat | Felelős |
+|---------|---------|
+| Feladatleírás összeállítása | András |
+| Táblázat (osztályok áttekintése) | Bori |
+| Tervezés (osztályok, GUI felépítés) | Közös |
+| Kincs megtalálásának logikája | Bori |
+| Modell (LadaModell osztály) | Bori |
+| Nézet (GuiLadaNezet osztály) | András |
+| Vezérlő (LadaVezerlo osztály) | Közös |
+| Main program | Közös |
+| Dokumentáció (README, leírás) | Közös |
+
+---
+
 ## Csapat tagok
 - Ilyés Borbála  
 - Fabu András  
