@@ -102,6 +102,31 @@
 | Dokumentáció (README, leírás) | Közös |
 
 ---
+# Bori megoldása a kincs rejtekhelyére vonatkozóan
+
+A következő állítások alapján kell meghatározni, hogy hol van a kincs:
+
+| Ládánál   | Állítás                             | Jelölés  |
+|-----------|-----------------------------------|----------|
+| Arany     | Én rejtem a kincset                | h (hazudik) |
+| Ezüst     | Nem én rejtem a kincset            | i (igazat mond) |
+| Bronz     | Arany hazudik                     | h (hazudik) |
+
+**Jelölések:**
+
+- **h** = hazudik  
+- **i** = igazat mond  
+
+---
+
+## Bori megoldása összefoglalva:
+
+- Az Arany láda állítása hamis, tehát **nem ő rejti a kincset**.
+- Az Ezüst láda állítása igaz, tehát **nem ő rejti a kincset**.
+- A Bronz láda állítása hamis, vagyis **az Arany láda nem hazudik** — de ez ellentmond az első pontnak, ezért a kincs **itt (Bronz ládában) van**.
+
+**Tehát a kincs a Bronz ládában található.**
+
 
 ## Csapat tagok
 - Ilyés Borbála  
