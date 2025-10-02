@@ -1,13 +1,36 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package nezet;
 
-/**
- *
- * @author ilyes.borbala
- */
+
 public class GuiLadaNezet {
+    private String Nev;
+    private String Felirat;
+    private boolean EbbenVanAKimcs;
+    private boolean IgazatMonddE;
+
+    public GuiLadaNezet(String Nev, String Felirat, boolean EbbenVanAKimcs, boolean IgazatMonddE) {
+        this.Nev = Nev;
+        this.Felirat = Felirat;
+        this.EbbenVanAKimcs = EbbenVanAKimcs;
+        this.IgazatMonddE = IgazatMonddE;
+    }
+
+    public boolean isIgazatMonddE() {
+        return IgazatMonddE;
+    }
+
+
+
+    public String getNev() {
+        return Nev;
+    }
+
+    public String getFelirat() {
+        return Felirat;
+    }
+
+    public boolean isEbbenVanAKimcs() {
+        return EbbenVanAKimcs;
+    }
     
 }
