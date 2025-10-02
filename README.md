@@ -28,7 +28,7 @@
 | **LadaModell** | - felirata: `str`<br>- Nev: `str`<br>- benneVanEAKincs: `bool` | - getterek<br>- setterek<br>- konstruktor | A láda adatait tárolja |
 | **GuiLadaNezet** | - modell: `LadaModell` | - getter<br>- mutat() | Felhasználói felület megjelenítéséért felel |
 | **LadaVezerlo** | - modell: `LadaModell`<br>- nezet: `GuiLadaNezet` | - konstruktor (modell, nezet)<br>- megjelenit()<br>- feladat() | Az adatok és nézet összekapcsolása, vezérlés |
-| **Main** | *(nincs adattag)* | - konstruktor<br>- main() | A program belépési pontja, innen indul minden |
+| **Main** | *(nincs adattag)* | - konstruktor()<br>- main() | A program belépési pontja, innen indul minden |
 
 ---
 
