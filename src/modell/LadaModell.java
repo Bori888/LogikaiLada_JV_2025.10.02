@@ -29,6 +29,17 @@ public class LadaModell {
     public boolean isIgazatMonddE() {
         return IgazatMonddE;
     }
-    
 
+    public void setBenneVanEAKincs(boolean benneVanEAKincs) {
+        this.benneVanEAKincs = benneVanEAKincs;
+    }
+
+    public void setIgazatMonddE(boolean igazatMonddE) {
+        this.IgazatMonddE = igazatMonddE;
+    }
+
+    @Override
+    public String toString() {
+        return "Lada{" + "Nev=" + Nev + ", Felirat=" + Felirat + ", benneVanEAKincs=" + benneVanEAKincs + ", IgazatMonddE=" + IgazatMonddE + '}';
+    }
 }
