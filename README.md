@@ -132,5 +132,4 @@ A következő állítások alapján kell meghatározni, hogy hol van a kincs:
 - Ilyés Borbála  
 - Fabu András
 
-<img width="488" height="556" alt="image" src="https://github.com/user-attachments/assets/622c48ba-d6a1-4648-95d0-20ad59cc8b7c" />
-
+<img width="583" height="379" alt="image" src="https://github.com/user-attachments/assets/c6056e4a-88b4-49d9-b077-e799bd8044ad" />
