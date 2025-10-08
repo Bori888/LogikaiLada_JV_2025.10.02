@@ -17,9 +17,19 @@ public class LadaVezerlo {
         nezet.getBtnEllenoriz().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Itt később lesz az ellenőrzés logikája
-                System.out.println("Ellenőrzés gomb megnyomva (még nincs logika)");
+                ellenoriz();
             }
         });
+    }
+
+    // --- Új metódus: ellenőrzés ---
+    private void ellenoriz() {
+        if (nezet.getRBronzbanVanAKincs().isSelected()) {
+            nezet.getTxtEredmeny().setText("Nyertél!");
+        } else if (nezet.getRdbAranybanVanAKincs().isSelected() || nezet.getRdbEzustbenVanAKincs().isSelected()) {
+            nezet.getTxtEredmeny().setText("Sajnálom, nem abban a ládában van a kincs.");
+        } else {
+            nezet.getTxtEredmeny().setText("Válassz egy ládát!");
+        }
     }
 }
