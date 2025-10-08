@@ -21,11 +21,11 @@ public class GuiLadaNezet extends javax.swing.JFrame {
         btnElenoriz = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         pnlBronzLada = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
+        lblBronzLadaKep = new javax.swing.JLabel();
         pnlAranyLada = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        lblAranyLadaKep = new javax.swing.JLabel();
         pnlEzustLada = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
+        lblEzustLadaKep = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         lblEzustLadaLeiras = new javax.swing.JLabel();
         lblAranyLadaLeiras = new javax.swing.JLabel();
@@ -81,7 +81,7 @@ public class GuiLadaNezet extends javax.swing.JFrame {
 
         pnlBronzLada.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Bronz"));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nezet/bronz_lada.png"))); // NOI18N
+        lblBronzLadaKep.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nezet/bronz_lada.png"))); // NOI18N
 
         javax.swing.GroupLayout pnlBronzLadaLayout = new javax.swing.GroupLayout(pnlBronzLada);
         pnlBronzLada.setLayout(pnlBronzLadaLayout);
@@ -89,20 +89,20 @@ public class GuiLadaNezet extends javax.swing.JFrame {
             pnlBronzLadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlBronzLadaLayout.createSequentialGroup()
                 .addGap(18, 18, 18)
-                .addComponent(jLabel3)
+                .addComponent(lblBronzLadaKep)
                 .addContainerGap(18, Short.MAX_VALUE))
         );
         pnlBronzLadaLayout.setVerticalGroup(
             pnlBronzLadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlBronzLadaLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel3)
+                .addComponent(lblBronzLadaKep)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pnlAranyLada.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Arany"));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nezet/arany_lada.png"))); // NOI18N
+        lblAranyLadaKep.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nezet/arany_lada.png"))); // NOI18N
 
         javax.swing.GroupLayout pnlAranyLadaLayout = new javax.swing.GroupLayout(pnlAranyLada);
         pnlAranyLada.setLayout(pnlAranyLadaLayout);
@@ -110,20 +110,20 @@ public class GuiLadaNezet extends javax.swing.JFrame {
             pnlAranyLadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlAranyLadaLayout.createSequentialGroup()
                 .addGap(17, 17, 17)
-                .addComponent(jLabel1)
+                .addComponent(lblAranyLadaKep)
                 .addContainerGap(20, Short.MAX_VALUE))
         );
         pnlAranyLadaLayout.setVerticalGroup(
             pnlAranyLadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlAranyLadaLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addComponent(lblAranyLadaKep)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pnlEzustLada.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Ezüst"));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nezet/ezust_lada.png"))); // NOI18N
+        lblEzustLadaKep.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nezet/ezust_lada.png"))); // NOI18N
 
         javax.swing.GroupLayout pnlEzustLadaLayout = new javax.swing.GroupLayout(pnlEzustLada);
         pnlEzustLada.setLayout(pnlEzustLadaLayout);
@@ -131,14 +131,14 @@ public class GuiLadaNezet extends javax.swing.JFrame {
             pnlEzustLadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlEzustLadaLayout.createSequentialGroup()
                 .addGap(17, 17, 17)
-                .addComponent(jLabel2)
+                .addComponent(lblEzustLadaKep)
                 .addContainerGap(20, Short.MAX_VALUE))
         );
         pnlEzustLadaLayout.setVerticalGroup(
             pnlEzustLadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlEzustLadaLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel2)
+                .addComponent(lblEzustLadaKep)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -273,15 +273,15 @@ public class GuiLadaNezet extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnElenoriz;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblAranyLadaKep;
     private javax.swing.JLabel lblAranyLadaLeiras;
+    private javax.swing.JLabel lblBronzLadaKep;
     private javax.swing.JLabel lblBronzLadaLeiras;
+    private javax.swing.JLabel lblEzustLadaKep;
     private javax.swing.JLabel lblEzustLadaLeiras;
     private javax.swing.JPanel pnlAranyLada;
     private javax.swing.JPanel pnlBronzLada;
