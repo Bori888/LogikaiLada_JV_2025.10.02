@@ -24,9 +24,9 @@ public class LadaVezerlo {
 
     private void ellenoriz() {
         if (nezet.getRBronzbanVanAKincs().isSelected()) {
-            nezet.getTxtEredmeny().setText("Nyertél!");
+            nezet.getTxtEredmeny().setText("Gratulálok! Megtaláltad a kincset!");
         } else if (nezet.getRdbAranybanVanAKincs().isSelected() || nezet.getRdbEzustbenVanAKincs().isSelected()) {
-            nezet.getTxtEredmeny().setText("Sajnálom, nem abban a ládában van a kincs.");
+            nezet.getTxtEredmeny().setText("Sajnálom, nem ebben a ládában van a kincs!");
         } else {
             nezet.getTxtEredmeny().setText("Válassz egy ládát!");
         }
