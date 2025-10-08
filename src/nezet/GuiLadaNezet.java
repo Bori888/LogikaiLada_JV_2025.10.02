@@ -201,8 +201,8 @@ public class GuiLadaNezet extends javax.swing.JFrame {
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
+getContentPane().setLayout(layout);
+layout.setHorizontalGroup(
     layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         .addGroup(layout.createSequentialGroup()
@@ -216,7 +216,7 @@ public class GuiLadaNezet extends javax.swing.JFrame {
                     .addComponent(btnElenoriz)))
             .addContainerGap())
 );
-        layout.setVerticalGroup(
+layout.setVerticalGroup(
     layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGroup(layout.createSequentialGroup()
             .addContainerGap()
