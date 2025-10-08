@@ -236,7 +236,6 @@ public class GuiLadaNezet extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    
     // --- Getters, hogy a vezérlő elérje az elemeket ---
     public javax.swing.JButton getBtnEllenoriz() {
         return btnElenoriz;
@@ -281,5 +280,4 @@ public class GuiLadaNezet extends javax.swing.JFrame {
     private javax.swing.JTextArea txtaFeladatLeiras;
     // End of variables declaration//GEN-END:variables
 
-    
 }

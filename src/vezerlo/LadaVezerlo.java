@@ -22,7 +22,6 @@ public class LadaVezerlo {
         });
     }
 
-    // --- Új metódus: ellenőrzés ---
     private void ellenoriz() {
         if (nezet.getRBronzbanVanAKincs().isSelected()) {
             nezet.getTxtEredmeny().setText("Nyertél!");
