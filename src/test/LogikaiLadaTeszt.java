@@ -1,17 +1,19 @@
 package test;
 
+import modell.LadaModell;
 import nezet.GuiLadaNezet;
 import vezerlo.LadaVezerlo;
 
 public class LogikaiLadaTeszt {
     public static void main(String[] args) {
-        System.out.println("=== LOGIKAI LÁDA TESZTEK (assert) ===");
+        System.out.println("+-----[ LOGIKAI LÁDA TESZTEK (assert) ]-----+");
         vezerloTesztek();
+        modellTesztek();
         System.out.println("Minden assert teszt sikeresen lefutott!");
     }
 
     private static void modellTesztek() {
-        
+        tesztLadakFelirat();
     }
 
     private static void vezerloTesztek() {
@@ -63,5 +65,24 @@ public class LogikaiLadaTeszt {
         } catch (Exception e) {
             assert false : "❌ Szám hivatkozás kivételt dobott: " + e.getMessage();
         }
+    }
+
+    private static void tesztLadakFelirat() {
+        LadaModell arany = new LadaModell("Arany", "Én rejtem a kincset", false, false);
+        LadaModell ezust = new LadaModell("Ezüst", "Nem én rejtem a kincset", false, true);
+        LadaModell bronz = new LadaModell("Bronz", "Az arany láda hazudik", false, true);
+
+        assert arany.getFelirat() != null && !arany.getFelirat().isEmpty() : "Arany láda felirata hibás!";
+        assert ezust.getFelirat() != null && !ezust.getFelirat().isEmpty() : "Ezüst láda felirata hibás!";
+        assert bronz.getFelirat() != null && !bronz.getFelirat().isEmpty() : "Bronz láda felirata hibás!";
+        
+        /* Hibás tesztek: */
+//        LadaModell arany = new LadaModell("Arany", "Én rejtem a kincset", false, false);
+//        LadaModell ezust = new LadaModell("Ezüst", "", false, true);
+//        LadaModell bronz = new LadaModell("Bronz", "Az arany láda hazudik", false, true);
+//
+//        assert arany.getFelirat() != null && !arany.getFelirat().isEmpty() : "Arany láda felirata hibás!";
+//        assert ezust.getFelirat() != null && !ezust.getFelirat().isEmpty() : "Ezüst láda felirata hibás!";
+//        assert bronz.getFelirat() != null && !bronz.getFelirat().isEmpty() : "Bronz láda felirata hibás!";
     }
 }
