@@ -10,18 +10,18 @@ public class LogikaiLadaTeszt {
         System.out.println("+-----[ LOGIKAI LÁDA TESZTEK (assert) ]-----+");
 
         LogikaiLadaTeszt teszt = new LogikaiLadaTeszt();
-        teszt.ossztesztVezerlo();//Bori csinálja
-        modellTesztek();//András csinálja
+        teszt.ossztesztVezerloBori();
+        modellTesztekAndras();
 
         System.out.println("Minden vezérlőteszt lefutott!");
     }
 
-    private static void modellTesztek() {
+    private static void modellTesztekAndras() {
         tesztLadakFelirat();
         tesztHaromLadaEgyKincs();
     }
 
-    private void ossztesztVezerlo() {
+    private void ossztesztVezerloBori() {
         System.out.println("\n--- Vezérlő tesztjei futnak ---");
         futtatTeszt("Kiválasztott ládára visszajelzés", this::vezerloKivalasztottLadaVisszajelzesTeszt);
         futtatTeszt("Visszajelzés szövege", this::vezerloVisszajelzesSzovegTeszt);
