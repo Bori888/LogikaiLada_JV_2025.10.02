@@ -1,6 +1,5 @@
 package test;
 
-import modell.LadaModell;
 import nezet.GuiLadaNezet;
 import vezerlo.LadaVezerlo;
 
@@ -13,11 +12,10 @@ public class LogikaiLadaTeszt {
         teszt.ossztesztVezerloBori();
         modellTesztekAndras();
 
-<<<<<<< HEAD
         System.out.println("\n---Minden vezérlőteszt lefutott!----");
-=======
+
         System.out.println("Minden vezérlőteszt lefutott!");
->>>>>>> 8a665d6c58a271c46610a1ea5337bf322714e912
+
     }
 
     private static void modellTesztekAndras() {
@@ -163,10 +161,7 @@ public class LogikaiLadaTeszt {
     }
 
     private static void tesztHaromLadaEgyKincs() {
-<<<<<<< HEAD
 
-=======
->>>>>>> 8a665d6c58a271c46610a1ea5337bf322714e912
         GuiLadaNezet nezet = new GuiLadaNezet();
         new LadaVezerlo(nezet);
 
@@ -203,9 +198,5 @@ public class LogikaiLadaTeszt {
         }
 
         assert nyertesDb == 1 : "A kincses (nyertes) ládák száma nem 1, hanem: " + nyertesDb;
-<<<<<<< HEAD
-
-=======
->>>>>>> 8a665d6c58a271c46610a1ea5337bf322714e912
     }
 }
