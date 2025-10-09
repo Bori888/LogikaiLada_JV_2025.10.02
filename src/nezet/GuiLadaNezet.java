@@ -33,7 +33,7 @@ public class GuiLadaNezet extends javax.swing.JFrame {
         txtEredmeny = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Logikai Láda - Hol a kincs?");
+        setTitle("Kincses láda - Hol a kincs?");
         setResizable(false);
 
         txtaFeladatLeiras.setEditable(false);

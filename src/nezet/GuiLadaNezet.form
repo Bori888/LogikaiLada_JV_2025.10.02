@@ -7,7 +7,7 @@
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
-    <Property name="title" type="java.lang.String" value="Logikai L&#xe1;da - Hol a kincs?"/>
+    <Property name="title" type="java.lang.String" value="Kincses l&#xe1;da - Hol a kincs?"/>
     <Property name="resizable" type="boolean" value="false"/>
   </Properties>
   <SyntheticProperties>

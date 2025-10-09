@@ -178,19 +178,19 @@ public class LogikaiLadaTeszt {
 
         nezet.getRdbAranybanVanAKincs().setSelected(true);
         nezet.getBtnEllenoriz().doClick();
-        if (nezet.getTxtEredmeny().getText().contains("Gratulálunk")) {
+        if (nezet.getTxtEredmeny().getText().contains("Gratulálok")) {
             nyertesDb++;
         }
 
         nezet.getRdbEzustbenVanAKincs().setSelected(true);
         nezet.getBtnEllenoriz().doClick();
-        if (nezet.getTxtEredmeny().getText().contains("Gratulálunk")) {
+        if (nezet.getTxtEredmeny().getText().contains("Gratulálok")) {
             nyertesDb++;
         }
 
         nezet.getRBronzbanVanAKincs().setSelected(true);
         nezet.getBtnEllenoriz().doClick();
-        if (nezet.getTxtEredmeny().getText().contains("Gratulálunk")) {
+        if (nezet.getTxtEredmeny().getText().contains("Gratulálok")) {
             nyertesDb++;
         }
 
