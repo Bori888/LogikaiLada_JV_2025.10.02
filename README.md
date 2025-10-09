@@ -154,4 +154,5 @@ A következő állítások alapján kell meghatározni, hogy hol van a kincs:
 
 ## GUI kinézet:
 
-<img width="583" height="379" alt="image" src="https://github.com/user-attachments/assets/c6056e4a-88b4-49d9-b077-e799bd8044ad" />
+<img width="581" height="462" alt="image" src="https://github.com/user-attachments/assets/271dc09e-d31d-4fbb-8117-1d36bd62fe7d" />
+
