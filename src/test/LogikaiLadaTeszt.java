@@ -7,19 +7,13 @@ import vezerlo.LadaVezerlo;
 public class LogikaiLadaTeszt {
 
     public static void main(String[] args) {
-        System.out.println("+-----[ LOGIKAI LÁDA TESZTEK (assert) ]-----+");
+        System.out.println("----- LOGIKAI LÁDA TESZTEK (assert) -----");
 
         LogikaiLadaTeszt teszt = new LogikaiLadaTeszt();
-<<<<<<< HEAD
-        teszt.ossztesztVezerloBori();//Bori csinálja
-        modellTesztekAndras();//András csinálja
-        
-=======
         teszt.ossztesztVezerloBori();
         modellTesztekAndras();
 
->>>>>>> b70ef45ddb52224092e9ce4be2191385cd6a9aca
-        System.out.println("Minden vezérlőteszt lefutott!");
+        System.out.println("\n---Minden vezérlőteszt lefutott!----");
     }
 
     private static void modellTesztekAndras() {
@@ -86,7 +80,6 @@ public class LogikaiLadaTeszt {
     private void vezerloVisszajelzesSzovegTeszt() {
         TestKornyezet k = ujKornyezet();
 
-        // ✅ Nincs kiválasztás → figyelmeztetés
         k.nezet.getRBronzbanVanAKincs().setSelected(false);
         k.nezet.getRdbAranybanVanAKincs().setSelected(false);
         k.nezet.getRdbEzustbenVanAKincs().setSelected(false);
@@ -94,7 +87,7 @@ public class LogikaiLadaTeszt {
         assert k.nezet.getTxtEredmeny().getText().equals("Kérlek, válassz egy ládát!") :
                 "Nincs választás: hibás üzenet: " + k.nezet.getTxtEredmeny().getText();
 
-//        // Hibás adat: üres szöveg szimuláció
+//        // Hibás adat
 //        try {
 //            k.nezet.getTxtEredmeny().setText("");
 //            assert !k.nezet.getTxtEredmeny().getText().isEmpty() :
@@ -123,7 +116,7 @@ public class LogikaiLadaTeszt {
             assert false : "Szám hivatkozás kivételt dobott: " + e.getMessage();
         }
 
-        // Hibás adat: null hivatkozás
+        // Hibás adat
 //        try {
 //            Object nulla = null;
 //            String teszt = String.valueOf(nulla);
@@ -166,9 +159,7 @@ public class LogikaiLadaTeszt {
     }
 
     private static void tesztHaromLadaEgyKincs() {
-<<<<<<< HEAD
-        
-=======
+
         GuiLadaNezet nezet = new GuiLadaNezet();
         new LadaVezerlo(nezet);
 
@@ -205,6 +196,6 @@ public class LogikaiLadaTeszt {
         }
 
         assert nyertesDb == 1 : "A kincses (nyertes) ládák száma nem 1, hanem: " + nyertesDb;
->>>>>>> b70ef45ddb52224092e9ce4be2191385cd6a9aca
+
     }
 }
