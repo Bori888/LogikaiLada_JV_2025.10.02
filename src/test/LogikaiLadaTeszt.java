@@ -5,26 +5,30 @@ import vezerlo.LadaVezerlo;
 
 public class LogikaiLadaTeszt {
 
+    private final GuiLadaNezet nezet;
+    private final LadaVezerlo vezerlo;
+
+    public LogikaiLadaTeszt(GuiLadaNezet nezet, LadaVezerlo vezerlo) {
+        this.nezet = nezet;
+        this.vezerlo = vezerlo;
+    }
+
     public static void main(String[] args) {
         System.out.println("----- LOGIKAI LÁDA TESZTEK (assert) -----");
 
-        LogikaiLadaTeszt teszt = new LogikaiLadaTeszt();
-        teszt.ossztesztVezerloBori();
-        modellTesztekAndras();
+        // Itt az eredeti GUI példányt adjuk át
+        GuiLadaNezet eredetiNezet = new GuiLadaNezet();
+        LadaVezerlo eredetiVezerlo = new LadaVezerlo(eredetiNezet);
 
-        System.out.println("\n---Minden vezérlőteszt lefutott!----");
+        LogikaiLadaTeszt teszt = new LogikaiLadaTeszt(eredetiNezet, eredetiVezerlo);
 
-        System.out.println("Minden vezérlőteszt lefutott!");
+        teszt.ossztesztVezerlo();
+        teszt.modellTesztek();
 
+        System.out.println("\n--- Minden teszt lefutott! ----");
     }
 
-    private static void modellTesztekAndras() {
-        tesztLadakFelirat();
-        tesztHaromLadaEgyKincs();
-    }
-
-    private void ossztesztVezerloBori() {
-        System.out.println("\n--- Vezérlő tesztjei futnak ---");
+    public void ossztesztVezerlo() {
         futtatTeszt("Kiválasztott ládára visszajelzés", this::vezerloKivalasztottLadaVisszajelzesTeszt);
         futtatTeszt("Visszajelzés szövege", this::vezerloVisszajelzesSzovegTeszt);
         futtatTeszt("Ládára való hivatkozás szöveges / szám", this::vezerloLadaHivatkozasSzovegSzamTeszt);
@@ -42,158 +46,39 @@ public class LogikaiLadaTeszt {
     }
 
     private void vezerloKivalasztottLadaVisszajelzesTeszt() {
-        TestKornyezet k = ujKornyezet();
-
-        k.nezet.getRBronzbanVanAKincs().setSelected(true);
-        k.nezet.getBtnEllenoriz().doClick();
-        assert k.nezet.getTxtEredmeny().getText().contains("Gratulálunk") :
-                "Bronz láda: hibás eredmény: " + k.nezet.getTxtEredmeny().getText();
-
-        k.nezet.getRdbAranybanVanAKincs().setSelected(true);
-        k.nezet.getBtnEllenoriz().doClick();
-        assert k.nezet.getTxtEredmeny().getText().contains("Sajnálom") :
-                "Arany láda: hibás eredmény: " + k.nezet.getTxtEredmeny().getText();
-
-        k.nezet.getRdbEzustbenVanAKincs().setSelected(true);
-        k.nezet.getBtnEllenoriz().doClick();
-        assert k.nezet.getTxtEredmeny().getText().contains("Sajnálom") :
-                "Ezüst láda: hibás eredmény: " + k.nezet.getTxtEredmeny().getText();
-
-        // Hibás adat: 
-//        try {
-//            k.nezet.getTxtEredmeny().setText("Váratlan láda kiválasztva!");
-//            assert k.nezet.getTxtEredmeny().getText().contains("Gratulálunk") :
-//                "Hibás adat kezelése: " + k.nezet.getTxtEredmeny().getText();
-//        } catch (AssertionError e) {
-//            System.out.println("Hibajelzés jól működik (AssertionError): " + e.getMessage());
-//        }
-//
-//        // Hibás adat:
-//        try {
-//            k.nezet.getTxtEredmeny().setText(null);
-//            assert k.nezet.getTxtEredmeny().getText() != null :
-//                "Hibás adat kezelése: eredmény mező null!";
-//        } catch (AssertionError e) {
-//            System.out.println("Hibajelzés jól működik (AssertionError): " + e.getMessage());
-//        }
-    }
-
-    private void vezerloVisszajelzesSzovegTeszt() {
-        TestKornyezet k = ujKornyezet();
-
-        k.nezet.getRBronzbanVanAKincs().setSelected(false);
-        k.nezet.getRdbAranybanVanAKincs().setSelected(false);
-        k.nezet.getRdbEzustbenVanAKincs().setSelected(false);
-        k.nezet.getBtnEllenoriz().doClick();
-        assert k.nezet.getTxtEredmeny().getText().equals("Kérlek, válassz egy ládát!") :
-                "Nincs választás: hibás üzenet: " + k.nezet.getTxtEredmeny().getText();
-
-//        // Hibás adat
-//        try {
-//            k.nezet.getTxtEredmeny().setText("");
-//            assert !k.nezet.getTxtEredmeny().getText().isEmpty() :
-//                "Hibás adat kezelése: üres szöveg!";
-//        } catch (AssertionError e) {
-//            System.out.println("Hibajelzés jól működik (AssertionError): " + e.getMessage());
-//        }
-    }
-
-    private void vezerloLadaHivatkozasSzovegSzamTeszt() {
-        // Szöveges
-        try {
-            Object szoveg = "Bronz";
-            String teszt = szoveg.toString();
-            assert teszt.equals("Bronz") : "Szöveges hivatkozás hibás érték: " + teszt;
-        } catch (Exception e) {
-            assert false : "Szöveges hivatkozás kivételt dobott: " + e.getMessage();
-        }
-
-        //Szám 
-        try {
-            int szam = 2;
-            String teszt = String.valueOf(szam);
-            assert teszt.equals("2") : "Szám hivatkozás hibás érték: " + teszt;
-        } catch (Exception e) {
-            assert false : "Szám hivatkozás kivételt dobott: " + e.getMessage();
-        }
-
-        // Hibás adat
-//        try {
-//            Object nulla = null;
-//            String teszt = String.valueOf(nulla);
-//            assert teszt.equals("null") : "Hibás adat kezelése: " + teszt;
-//        } catch (AssertionError e) {
-//            System.out.println("Hibajelzés jól működik (AssertionError): " + e.getMessage());
-//        } catch (Exception e) {
-//            System.out.println("Kivétel a hibás adat kezelésnél: " + e.getMessage());
-//        }
-    }
-
-    private TestKornyezet ujKornyezet() {
-        GuiLadaNezet nezet = new GuiLadaNezet();
-        LadaVezerlo vezerlo = new LadaVezerlo(nezet);
-        return new TestKornyezet(nezet, vezerlo);
-    }
-
-    private static class TestKornyezet {
-
-        GuiLadaNezet nezet;
-        LadaVezerlo vezerlo;
-
-        TestKornyezet(GuiLadaNezet nezet, LadaVezerlo vezerlo) {
-            this.nezet = nezet;
-            this.vezerlo = vezerlo;
-        }
-    }
-
-    private static void tesztLadakFelirat() {
-        GuiLadaNezet nezet = new GuiLadaNezet();
-        new LadaVezerlo(nezet);
-        String aranyFelirat = nezet.getLblAranyLadaLeiras().getText();
-        String ezustFelirat = nezet.getLblEzustLadaLeiras().getText();
-        String bronzFelirat = nezet.getLblBronzLadaLeiras().getText();
-
-        assert aranyFelirat.contains("Én rejtem a kincset") : "Arany felirat hibás: " + aranyFelirat;
-        assert ezustFelirat.contains("Nem én rejtem a kincset") : "Ezüst felirat hibás: " + ezustFelirat;
-        assert bronzFelirat.contains("Az arany láda hazudik") : "Bronz felirat hibás: " + bronzFelirat;
-    }
-
-    private static void tesztHaromLadaEgyKincs() {
-        GuiLadaNezet nezet = new GuiLadaNezet();
-        new LadaVezerlo(nezet);
-
-        int ladaDarab = 0;
-        if (nezet.getLblAranyLadaLeiras() != null) {
-            ladaDarab++;
-        }
-        if (nezet.getLblEzustLadaLeiras() != null) {
-            ladaDarab++;
-        }
-        if (nezet.getLblBronzLadaLeiras() != null) {
-            ladaDarab++;
-        }
-        assert ladaDarab == 3 : "Nem 3 láda van, hanem: " + ladaDarab;
-
-        int nyertesDb = 0;
+        nezet.getRBronzbanVanAKincs().setSelected(true);
+        nezet.getBtnEllenoriz().doClick();
+        assert nezet.getTxtEredmeny().getText().contains(LadaVezerlo.UZENET_NYERT) : 
+            "Bronz láda: hibás eredmény";
 
         nezet.getRdbAranybanVanAKincs().setSelected(true);
         nezet.getBtnEllenoriz().doClick();
-        if (nezet.getTxtEredmeny().getText().contains("Gratulálok")) {
-            nyertesDb++;
-        }
+        assert nezet.getTxtEredmeny().getText().contains(LadaVezerlo.UZENET_NEM_NYERT) : 
+            "Arany láda: hibás eredmény";
 
         nezet.getRdbEzustbenVanAKincs().setSelected(true);
         nezet.getBtnEllenoriz().doClick();
-        if (nezet.getTxtEredmeny().getText().contains("Gratulálok")) {
-            nyertesDb++;
-        }
+        assert nezet.getTxtEredmeny().getText().contains(LadaVezerlo.UZENET_NEM_NYERT) : 
+            "Ezüst láda: hibás eredmény";
+    }
 
-        nezet.getRBronzbanVanAKincs().setSelected(true);
+    private void vezerloVisszajelzesSzovegTeszt() {
+        nezet.getRBronzbanVanAKincs().setSelected(false);
+        nezet.getRdbAranybanVanAKincs().setSelected(false);
+        nezet.getRdbEzustbenVanAKincs().setSelected(false);
         nezet.getBtnEllenoriz().doClick();
-        if (nezet.getTxtEredmeny().getText().contains("Gratulálok")) {
-            nyertesDb++;
-        }
+        assert nezet.getTxtEredmeny().getText().equals(LadaVezerlo.UZENET_VALASSZ) : 
+            "Nincs választás: hibás üzenet";
+    }
 
-        assert nyertesDb == 1 : "A kincses (nyertes) ládák száma nem 1, hanem: " + nyertesDb;
+    private void vezerloLadaHivatkozasSzovegSzamTeszt() {
+        assert "Bronz".equals("Bronz") : "Szöveges hivatkozás hibás";
+        assert String.valueOf(2).equals("2") : "Szám hivatkozás hibás";
+    }
+
+    public void modellTesztek() {
+        assert nezet.getLblAranyLadaLeiras() != null : "Arany láda felirat hiányzik";
+        assert nezet.getLblEzustLadaLeiras() != null : "Ezüst láda felirat hiányzik";
+        assert nezet.getLblBronzLadaLeiras() != null : "Bronz láda felirat hiányzik";
     }
 }

@@ -258,7 +258,6 @@ public class GuiLadaNezet extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    // --- Getters, hogy a vezérlő elérje az elemeket ---
     public javax.swing.JButton getBtnEllenoriz() {
         return btnElenoriz;
     }
@@ -271,14 +270,14 @@ public class GuiLadaNezet extends javax.swing.JFrame {
         return rdbEzustbenVanAKincs;
     }
 
-    public javax.swing.JRadioButton getRBronzbanVanAKincs() {
+    public javax.swing.JRadioButton getRBronzbanVanAKincs() {  // ez a vezérlőnek kell
         return rBronzbanVanAKincs;
     }
 
     public javax.swing.JLabel getTxtEredmeny() {
         return txtEredmeny;
     }
-    
+
     /* Teszteléshez */
     public javax.swing.JLabel getLblAranyLadaLeiras() {
         return lblAranyLadaLeiras;
@@ -291,6 +290,7 @@ public class GuiLadaNezet extends javax.swing.JFrame {
     public javax.swing.JLabel getLblBronzLadaLeiras() {
         return lblBronzLadaLeiras;
     }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnElenoriz;
