@@ -8,11 +8,11 @@ public class LogikaiLadaTeszt {
 
     public static void main(String[] args) {
         System.out.println("+-----[ LOGIKAI LÁDA TESZTEK (assert) ]-----+");
-        
+
         LogikaiLadaTeszt teszt = new LogikaiLadaTeszt();
         teszt.ossztesztVezerlo();//Bori csinálja
         modellTesztek();//András csinálja
-        
+
         System.out.println("Minden vezérlőteszt lefutott!");
     }
 
@@ -137,8 +137,10 @@ public class LogikaiLadaTeszt {
 
     // --- Belső segédosztály ---
     private static class TestKornyezet {
+
         GuiLadaNezet nezet;
         LadaVezerlo vezerlo;
+
         TestKornyezet(GuiLadaNezet nezet, LadaVezerlo vezerlo) {
             this.nezet = nezet;
             this.vezerlo = vezerlo;
@@ -148,8 +150,6 @@ public class LogikaiLadaTeszt {
     private static void tesztLadakFelirat() {
         GuiLadaNezet nezet = new GuiLadaNezet();
         new LadaVezerlo(nezet);
-
-<<<<<<< HEAD
         String aranyFelirat = nezet.getLblAranyLadaLeiras().getText();
         String ezustFelirat = nezet.getLblEzustLadaLeiras().getText();
         String bronzFelirat = nezet.getLblBronzLadaLeiras().getText();
@@ -196,23 +196,5 @@ public class LogikaiLadaTeszt {
         }
 
         assert nyertesDb == 1 : "A kincses (nyertes) ládák száma nem 1, hanem: " + nyertesDb;
-=======
-        assert arany.getFelirat() != null && !arany.getFelirat().isEmpty() : "Arany láda felirata hibás!";
-        assert ezust.getFelirat() != null && !ezust.getFelirat().isEmpty() : "Ezüst láda felirata hibás!";
-        assert bronz.getFelirat() != null && !bronz.getFelirat().isEmpty() : "Bronz láda felirata hibás!";
-
-        /* Hibás tesztek: */
-//        LadaModell arany = new LadaModell("Arany", "Én rejtem a kincset", false, false);
-//        LadaModell ezust = new LadaModell("Ezüst", "", false, true);
-//        LadaModell bronz = new LadaModell("Bronz", "Az arany láda hazudik", false, true);
-//
-//        assert arany.getFelirat() != null && !arany.getFelirat().isEmpty() : "Arany láda felirata hibás!";
-//        assert ezust.getFelirat() != null && !ezust.getFelirat().isEmpty() : "Ezüst láda felirata hibás!";
-//        assert bronz.getFelirat() != null && !bronz.getFelirat().isEmpty() : "Bronz láda felirata hibás!";
-    }
-
-    private static void tesztHaromLadaEgyKincs() {
-        // Itt marad üres, a modellhez nem nyúlunk
->>>>>>> 9bfe9cfdc8b08a56df1c5c67d889c95292df79fd
     }
 }
