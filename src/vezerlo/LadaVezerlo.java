@@ -8,6 +8,11 @@ public class LadaVezerlo {
 
     private GuiLadaNezet nezet;
 
+    // Üzenetek konstansokként, hogy a teszt is ugyanazt használja
+    public static final String UZENET_NYERT = "Gratulálunk, nyertél!";
+    public static final String UZENET_NEM_NYERT = "Sajnálom, nem abban a ládában van a kincs.";
+    public static final String UZENET_VALASSZ = "Kérlek, válassz egy ládát!";
+
     public LadaVezerlo(GuiLadaNezet nezet) {
         this.nezet = nezet;
         init();
@@ -24,11 +29,12 @@ public class LadaVezerlo {
 
     private void ellenoriz() {
         if (nezet.getRBronzbanVanAKincs().isSelected()) {
-            nezet.getTxtEredmeny().setText("Gratulálok! Megtaláltad a kincset!");
-        } else if (nezet.getRdbAranybanVanAKincs().isSelected() || nezet.getRdbEzustbenVanAKincs().isSelected()) {
-            nezet.getTxtEredmeny().setText("Sajnálom, nem ebben a ládában van a kincs!");
+            nezet.getTxtEredmeny().setText(UZENET_NYERT);
+        } else if (nezet.getRdbAranybanVanAKincs().isSelected() ||
+                   nezet.getRdbEzustbenVanAKincs().isSelected()) {
+            nezet.getTxtEredmeny().setText(UZENET_NEM_NYERT);
         } else {
-            nezet.getTxtEredmeny().setText("Válassz egy ládát!");
+            nezet.getTxtEredmeny().setText(UZENET_VALASSZ);
         }
     }
 }

@@ -2,6 +2,7 @@ package test;
 
 import nezet.GuiLadaNezet;
 import vezerlo.LadaVezerlo;
+import vezerlo.LadaVezerlo;
 
 public class LogikaiLadaTeszt {
 
@@ -92,6 +93,7 @@ public class LogikaiLadaTeszt {
         return new TestKornyezet(nezet, vezerlo);
     }
 
+    // --- Belső segédosztály ---
     private static class TestKornyezet {
 
         GuiLadaNezet nezet;
