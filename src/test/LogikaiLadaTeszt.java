@@ -8,9 +8,12 @@ public class LogikaiLadaTeszt {
 
     public static void main(String[] args) {
         System.out.println("+-----[ LOGIKAI LÁDA TESZTEK (assert) ]-----+");
+        
         LogikaiLadaTeszt teszt = new LogikaiLadaTeszt();
-        teszt.ossztesztVezerlo();
-        modellTesztek();
+        teszt.ossztesztVezerlo();//Bori csinálja
+        modellTesztek();//András csinálja
+        
+        System.out.println("Minden vezérlőteszt lefutott!");
     }
 
     private static void modellTesztek() {
@@ -39,6 +42,7 @@ public class LogikaiLadaTeszt {
     private void vezerloKivalasztottLadaVisszajelzesTeszt() {
         TestKornyezet k = ujKornyezet();
 
+        // ✅ Helyes adatok
         k.nezet.getRBronzbanVanAKincs().setSelected(true);
         k.nezet.getBtnEllenoriz().doClick();
         assert k.nezet.getTxtEredmeny().getText().contains("Gratulálunk") :
@@ -53,39 +57,76 @@ public class LogikaiLadaTeszt {
         k.nezet.getBtnEllenoriz().doClick();
         assert k.nezet.getTxtEredmeny().getText().contains("Sajnálom") :
                 "Ezüst láda: hibás eredmény: " + k.nezet.getTxtEredmeny().getText();
+
+        // ❌ Hibás adat: nem létező láda szimulációja
+//        try {
+//            k.nezet.getTxtEredmeny().setText("Váratlan láda kiválasztva!");
+//            assert k.nezet.getTxtEredmeny().getText().contains("Gratulálunk") :
+//                "Hibás adat kezelése: " + k.nezet.getTxtEredmeny().getText();
+//        } catch (AssertionError e) {
+//            System.out.println("Hibajelzés jól működik (AssertionError): " + e.getMessage());
+//        }
+//
+//        // ❌ Hibás adat: null kiválasztás
+//        try {
+//            k.nezet.getTxtEredmeny().setText(null);
+//            assert k.nezet.getTxtEredmeny().getText() != null :
+//                "Hibás adat kezelése: eredmény mező null!";
+//        } catch (AssertionError e) {
+//            System.out.println("Hibajelzés jól működik (AssertionError): " + e.getMessage());
+//        }
     }
 
     private void vezerloVisszajelzesSzovegTeszt() {
         TestKornyezet k = ujKornyezet();
 
+        // ✅ Nincs kiválasztás → figyelmeztetés
         k.nezet.getRBronzbanVanAKincs().setSelected(false);
         k.nezet.getRdbAranybanVanAKincs().setSelected(false);
         k.nezet.getRdbEzustbenVanAKincs().setSelected(false);
         k.nezet.getBtnEllenoriz().doClick();
         assert k.nezet.getTxtEredmeny().getText().equals("Kérlek, válassz egy ládát!") :
                 "Nincs választás: hibás üzenet: " + k.nezet.getTxtEredmeny().getText();
+
+//        // ❌ Hibás adat: üres szöveg szimuláció
+//        try {
+//            k.nezet.getTxtEredmeny().setText("");
+//            assert !k.nezet.getTxtEredmeny().getText().isEmpty() :
+//                "Hibás adat kezelése: üres szöveg!";
+//        } catch (AssertionError e) {
+//            System.out.println("Hibajelzés jól működik (AssertionError): " + e.getMessage());
+//        }
     }
 
     private void vezerloLadaHivatkozasSzovegSzamTeszt() {
-        // Szöveges hivatkozás
+        // ✅ Szöveges hivatkozás
         try {
             Object szoveg = "Bronz";
             String teszt = szoveg.toString();
-            assert teszt.equals("Bronz") :
-                    "Szöveges hivatkozás hibás érték: " + teszt;
+            assert teszt.equals("Bronz") : "Szöveges hivatkozás hibás érték: " + teszt;
         } catch (Exception e) {
             assert false : "Szöveges hivatkozás kivételt dobott: " + e.getMessage();
         }
 
-        // Szám típusú hivatkozás
+        // ✅ Szám típusú hivatkozás
         try {
             int szam = 2;
             String teszt = String.valueOf(szam);
-            assert teszt.equals("2") :
-                    "Szám hivatkozás hibás érték: " + teszt;
+            assert teszt.equals("2") : "Szám hivatkozás hibás érték: " + teszt;
         } catch (Exception e) {
             assert false : "Szám hivatkozás kivételt dobott: " + e.getMessage();
         }
+
+        // ❌ Hibás adat: null hivatkozás
+//        try {
+//            Object nulla = null;
+//            String teszt = String.valueOf(nulla);
+//            assert teszt.equals("null") : "Hibás adat kezelése: " + teszt;
+//        } catch (AssertionError e) {
+//            System.out.println("Hibajelzés jól működik (AssertionError): " + e.getMessage());
+//        } catch (Exception e) {
+//            System.out.println("Kivétel a hibás adat kezelésnél: " + e.getMessage());
+//        }
     }
 
     private TestKornyezet ujKornyezet() {
@@ -96,10 +137,8 @@ public class LogikaiLadaTeszt {
 
     // --- Belső segédosztály ---
     private static class TestKornyezet {
-
         GuiLadaNezet nezet;
         LadaVezerlo vezerlo;
-
         TestKornyezet(GuiLadaNezet nezet, LadaVezerlo vezerlo) {
             this.nezet = nezet;
             this.vezerlo = vezerlo;
@@ -110,6 +149,7 @@ public class LogikaiLadaTeszt {
         GuiLadaNezet nezet = new GuiLadaNezet();
         new LadaVezerlo(nezet);
 
+<<<<<<< HEAD
         String aranyFelirat = nezet.getLblAranyLadaLeiras().getText();
         String ezustFelirat = nezet.getLblEzustLadaLeiras().getText();
         String bronzFelirat = nezet.getLblBronzLadaLeiras().getText();
@@ -156,5 +196,23 @@ public class LogikaiLadaTeszt {
         }
 
         assert nyertesDb == 1 : "A kincses (nyertes) ládák száma nem 1, hanem: " + nyertesDb;
+=======
+        assert arany.getFelirat() != null && !arany.getFelirat().isEmpty() : "Arany láda felirata hibás!";
+        assert ezust.getFelirat() != null && !ezust.getFelirat().isEmpty() : "Ezüst láda felirata hibás!";
+        assert bronz.getFelirat() != null && !bronz.getFelirat().isEmpty() : "Bronz láda felirata hibás!";
+
+        /* Hibás tesztek: */
+//        LadaModell arany = new LadaModell("Arany", "Én rejtem a kincset", false, false);
+//        LadaModell ezust = new LadaModell("Ezüst", "", false, true);
+//        LadaModell bronz = new LadaModell("Bronz", "Az arany láda hazudik", false, true);
+//
+//        assert arany.getFelirat() != null && !arany.getFelirat().isEmpty() : "Arany láda felirata hibás!";
+//        assert ezust.getFelirat() != null && !ezust.getFelirat().isEmpty() : "Ezüst láda felirata hibás!";
+//        assert bronz.getFelirat() != null && !bronz.getFelirat().isEmpty() : "Bronz láda felirata hibás!";
+    }
+
+    private static void tesztHaromLadaEgyKincs() {
+        // Itt marad üres, a modellhez nem nyúlunk
+>>>>>>> 9bfe9cfdc8b08a56df1c5c67d889c95292df79fd
     }
 }
