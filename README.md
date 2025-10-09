@@ -131,14 +131,16 @@ A következő állítások alapján kell meghatározni, hogy hol van a kincs:
 
 ## Kincses ládák - tesztelés
 
-**Modell *(András)*:** 
+**Modell:** 
+*(András)*
 
 - **1. teszt:** *minden ládán van felirat*
 - **2. teszt:** *a feliratok szövegébe aranynál "Én rejtem a kincset", ezüstnél "Nem én rejtem a kincset", bronznál "Az arany láda hazudik" szövegrészek megtalálhatóak*
 - **3. teszt:** *van pontosan 3 láda, csak az egyikben van kincs*
 - **4. teszt:** *ha nem létező ládára hivatkozunk, azt hogyan kezeli a program?*
 
-**Vezérlő *(Bori)*:**
+**Vezérlő:**
+*(Bori)*
 
 - **1. teszt:** *a kiválasztott ládára megfelelő visszajelzést kapunk (benne a kincs, nincs benne)*
 - **2. teszt:** *a visszajelzés szövege megfelelő ("Gratulálunk...", "Sajnos  nem nyert...")*
