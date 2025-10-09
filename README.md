@@ -131,18 +131,18 @@ A következő állítások alapján kell meghatározni, hogy hol van a kincs:
 
 ##Kincses ládák - tesztelés
 
-Modell: 
+**Modell:** 
 
-minden ládán van felirat
-a feliratok szövegébe aranynál "én rejtem", ezüstnél "nem én rejtem", bronznál "arany hazudik" 
-szövegrészek megtalálhatóak
-van pontosan 3 láda, csak az egyikben van kincs
-ha nem létező ládára hivatkozunk, azt hogyan kezeli a program?
-Vezérlő:
+- 1. minden ládán van felirat
+- 2. a feliratok szövegébe aranynál "Én rejtem a kincset", ezüstnél "Nem én rejtem a kincset", bronznál "Az arany láda hazudik" szövegrészek megtalálhatóak
+- 3. van pontosan 3 láda, csak az egyikben van kincs
+- 4. ha nem létező ládára hivatkozunk, azt hogyan kezeli a program?
 
-a kiválasztott ládára megfelelő visszajelzést kapunk (benne a kincs, nincs benne)
-a visszajelzés szövege megfelelő ("Gratulálunk...", "Sajnos  nem nyert...")
-ládára való hivatkozásnál mi történik, ha szöveget adunk meg a szám helyett (v fordítva)
+**Vezérlő:**
+
+- 1. a kiválasztott ládára megfelelő visszajelzést kapunk (benne a kincs, nincs benne)
+- 2. a visszajelzés szövege megfelelő ("Gratulálunk...", "Sajnos  nem nyert...")
+- 3. ládára való hivatkozásnál mi történik, ha szöveget adunk meg a szám helyett (v fordítva)
 
 ---
 
