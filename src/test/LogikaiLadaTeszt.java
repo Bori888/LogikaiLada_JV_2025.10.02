@@ -3,7 +3,6 @@ package test;
 import modell.LadaModell;
 import nezet.GuiLadaNezet;
 import vezerlo.LadaVezerlo;
-import vezerlo.LadaVezerlo;
 
 public class LogikaiLadaTeszt {
 
@@ -108,25 +107,54 @@ public class LogikaiLadaTeszt {
     }
 
     private static void tesztLadakFelirat() {
-        LadaModell arany = new LadaModell("Arany", "Én rejtem a kincset", false, false);
-        LadaModell ezust = new LadaModell("Ezüst", "Nem én rejtem a kincset", false, true);
-        LadaModell bronz = new LadaModell("Bronz", "Az arany láda hazudik", false, true);
+        GuiLadaNezet nezet = new GuiLadaNezet();
+        new LadaVezerlo(nezet);
 
-        assert arany.getFelirat() != null && !arany.getFelirat().isEmpty() : "Arany láda felirata hibás!";
-        assert ezust.getFelirat() != null && !ezust.getFelirat().isEmpty() : "Ezüst láda felirata hibás!";
-        assert bronz.getFelirat() != null && !bronz.getFelirat().isEmpty() : "Bronz láda felirata hibás!";
-        
-        /* Hibás tesztek: */
-//        LadaModell arany = new LadaModell("Arany", "Én rejtem a kincset", false, false);
-//        LadaModell ezust = new LadaModell("Ezüst", "", false, true);
-//        LadaModell bronz = new LadaModell("Bronz", "Az arany láda hazudik", false, true);
-//
-//        assert arany.getFelirat() != null && !arany.getFelirat().isEmpty() : "Arany láda felirata hibás!";
-//        assert ezust.getFelirat() != null && !ezust.getFelirat().isEmpty() : "Ezüst láda felirata hibás!";
-//        assert bronz.getFelirat() != null && !bronz.getFelirat().isEmpty() : "Bronz láda felirata hibás!";
+        String aranyFelirat = nezet.getLblAranyLadaLeiras().getText();
+        String ezustFelirat = nezet.getLblEzustLadaLeiras().getText();
+        String bronzFelirat = nezet.getLblBronzLadaLeiras().getText();
+
+        assert aranyFelirat.contains("Én rejtem a kincset") : "Arany felirat hibás: " + aranyFelirat;
+        assert ezustFelirat.contains("Nem én rejtem a kincset") : "Ezüst felirat hibás: " + ezustFelirat;
+        assert bronzFelirat.contains("Az arany láda hazudik") : "Bronz felirat hibás: " + bronzFelirat;
     }
-    
+
     private static void tesztHaromLadaEgyKincs() {
-        
+        GuiLadaNezet nezet = new GuiLadaNezet();
+        new LadaVezerlo(nezet);
+
+        int ladaDarab = 0;
+        if (nezet.getLblAranyLadaLeiras() != null) {
+            ladaDarab++;
+        }
+        if (nezet.getLblEzustLadaLeiras() != null) {
+            ladaDarab++;
+        }
+        if (nezet.getLblBronzLadaLeiras() != null) {
+            ladaDarab++;
+        }
+        assert ladaDarab == 3 : "Nem 3 láda van, hanem: " + ladaDarab;
+
+        int nyertesDb = 0;
+
+        nezet.getRdbAranybanVanAKincs().setSelected(true);
+        nezet.getBtnEllenoriz().doClick();
+        if (nezet.getTxtEredmeny().getText().contains("Gratulálunk")) {
+            nyertesDb++;
+        }
+
+        nezet.getRdbEzustbenVanAKincs().setSelected(true);
+        nezet.getBtnEllenoriz().doClick();
+        if (nezet.getTxtEredmeny().getText().contains("Gratulálunk")) {
+            nyertesDb++;
+        }
+
+        nezet.getRBronzbanVanAKincs().setSelected(true);
+        nezet.getBtnEllenoriz().doClick();
+        if (nezet.getTxtEredmeny().getText().contains("Gratulálunk")) {
+            nyertesDb++;
+        }
+
+        assert nyertesDb == 1 : "A kincses (nyertes) ládák száma nem 1, hanem: " + nyertesDb;
     }
 }

@@ -78,7 +78,7 @@ public class GuiLadaNezet extends javax.swing.JFrame {
 
         btnElenoriz.setText("Ellenőriz");
 
-        pnlBronzLada.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), null));
+        pnlBronzLada.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Bronz"));
 
         lblBronzLadaKep.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nezet/bronz_lada.png"))); // NOI18N
 
@@ -99,7 +99,7 @@ public class GuiLadaNezet extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        pnlAranyLada.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), null));
+        pnlAranyLada.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Arany"));
 
         lblAranyLadaKep.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nezet/arany_lada.png"))); // NOI18N
 
@@ -120,7 +120,7 @@ public class GuiLadaNezet extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        pnlEzustLada.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), null));
+        pnlEzustLada.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Ezüst"));
 
         lblEzustLadaKep.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nezet/ezust_lada.png"))); // NOI18N
 
@@ -227,15 +227,15 @@ public class GuiLadaNezet extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1)
-                            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnElenoriz)))
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(btnElenoriz)))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -277,6 +277,19 @@ public class GuiLadaNezet extends javax.swing.JFrame {
 
     public javax.swing.JLabel getTxtEredmeny() {
         return txtEredmeny;
+    }
+    
+    /* Teszteléshez */
+    public javax.swing.JLabel getLblAranyLadaLeiras() {
+        return lblAranyLadaLeiras;
+    }
+
+    public javax.swing.JLabel getLblEzustLadaLeiras() {
+        return lblEzustLadaLeiras;
+    }
+
+    public javax.swing.JLabel getLblBronzLadaLeiras() {
+        return lblBronzLadaLeiras;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
