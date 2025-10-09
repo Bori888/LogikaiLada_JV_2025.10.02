@@ -129,14 +129,14 @@ A következő állítások alapján kell meghatározni, hogy hol van a kincs:
 
 ---
 
-##Kincses ládák - tesztelés
+## Kincses ládák - tesztelés
 
 **Modell:** 
 
-- 1. minden ládán van felirat
-- 2. a feliratok szövegébe aranynál "Én rejtem a kincset", ezüstnél "Nem én rejtem a kincset", bronznál "Az arany láda hazudik" szövegrészek megtalálhatóak
-- 3. van pontosan 3 láda, csak az egyikben van kincs
-- 4. ha nem létező ládára hivatkozunk, azt hogyan kezeli a program?
+- 1. teszt: minden ládán van felirat
+- 2. teszt: a feliratok szövegébe aranynál "Én rejtem a kincset", ezüstnél "Nem én rejtem a kincset", bronznál "Az arany láda hazudik" szövegrészek megtalálhatóak
+- 3. teszt: van pontosan 3 láda, csak az egyikben van kincs
+- 4. teszt: ha nem létező ládára hivatkozunk, azt hogyan kezeli a program?
 
 **Vezérlő:**
 
