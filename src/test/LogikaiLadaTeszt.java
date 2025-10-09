@@ -10,18 +10,18 @@ public class LogikaiLadaTeszt {
         System.out.println("+-----[ LOGIKAI LÁDA TESZTEK (assert) ]-----+");
         
         LogikaiLadaTeszt teszt = new LogikaiLadaTeszt();
-        teszt.ossztesztVezerlo();//Bori csinálja
-        modellTesztek();//András csinálja
+        teszt.ossztesztVezerloBori();//Bori csinálja
+        modellTesztekAndras();//András csinálja
         
         System.out.println("Minden vezérlőteszt lefutott!");
     }
 
-    private static void modellTesztek() {
+    private static void modellTesztekAndras() {
         tesztLadakFelirat();
         tesztHaromLadaEgyKincs();
     }
 
-    private void ossztesztVezerlo() {
+    private void ossztesztVezerloBori() {
         System.out.println("\n--- Vezérlő tesztjei futnak ---");
         futtatTeszt("Kiválasztott ládára visszajelzés", this::vezerloKivalasztottLadaVisszajelzesTeszt);
         futtatTeszt("Visszajelzés szövege", this::vezerloVisszajelzesSzovegTeszt);
@@ -42,7 +42,7 @@ public class LogikaiLadaTeszt {
     private void vezerloKivalasztottLadaVisszajelzesTeszt() {
         TestKornyezet k = ujKornyezet();
 
-        // ✅ Helyes adatok
+        
         k.nezet.getRBronzbanVanAKincs().setSelected(true);
         k.nezet.getBtnEllenoriz().doClick();
         assert k.nezet.getTxtEredmeny().getText().contains("Gratulálunk") :
@@ -58,7 +58,7 @@ public class LogikaiLadaTeszt {
         assert k.nezet.getTxtEredmeny().getText().contains("Sajnálom") :
                 "Ezüst láda: hibás eredmény: " + k.nezet.getTxtEredmeny().getText();
 
-        // ❌ Hibás adat: nem létező láda szimulációja
+        // Hibás adat: 
 //        try {
 //            k.nezet.getTxtEredmeny().setText("Váratlan láda kiválasztva!");
 //            assert k.nezet.getTxtEredmeny().getText().contains("Gratulálunk") :
@@ -67,7 +67,7 @@ public class LogikaiLadaTeszt {
 //            System.out.println("Hibajelzés jól működik (AssertionError): " + e.getMessage());
 //        }
 //
-//        // ❌ Hibás adat: null kiválasztás
+//        // Hibás adat:
 //        try {
 //            k.nezet.getTxtEredmeny().setText(null);
 //            assert k.nezet.getTxtEredmeny().getText() != null :
@@ -88,7 +88,7 @@ public class LogikaiLadaTeszt {
         assert k.nezet.getTxtEredmeny().getText().equals("Kérlek, válassz egy ládát!") :
                 "Nincs választás: hibás üzenet: " + k.nezet.getTxtEredmeny().getText();
 
-//        // ❌ Hibás adat: üres szöveg szimuláció
+//        // Hibás adat: üres szöveg szimuláció
 //        try {
 //            k.nezet.getTxtEredmeny().setText("");
 //            assert !k.nezet.getTxtEredmeny().getText().isEmpty() :
@@ -99,7 +99,7 @@ public class LogikaiLadaTeszt {
     }
 
     private void vezerloLadaHivatkozasSzovegSzamTeszt() {
-        // ✅ Szöveges hivatkozás
+        // Szöveges
         try {
             Object szoveg = "Bronz";
             String teszt = szoveg.toString();
@@ -108,7 +108,7 @@ public class LogikaiLadaTeszt {
             assert false : "Szöveges hivatkozás kivételt dobott: " + e.getMessage();
         }
 
-        // ✅ Szám típusú hivatkozás
+        //Szám 
         try {
             int szam = 2;
             String teszt = String.valueOf(szam);
@@ -117,7 +117,7 @@ public class LogikaiLadaTeszt {
             assert false : "Szám hivatkozás kivételt dobott: " + e.getMessage();
         }
 
-        // ❌ Hibás adat: null hivatkozás
+        // Hibás adat: null hivatkozás
 //        try {
 //            Object nulla = null;
 //            String teszt = String.valueOf(nulla);
@@ -135,7 +135,7 @@ public class LogikaiLadaTeszt {
         return new TestKornyezet(nezet, vezerlo);
     }
 
-    // --- Belső segédosztály ---
+
     private static class TestKornyezet {
         GuiLadaNezet nezet;
         LadaVezerlo vezerlo;
@@ -165,6 +165,6 @@ public class LogikaiLadaTeszt {
     }
 
     private static void tesztHaromLadaEgyKincs() {
-        // Itt marad üres, a modellhez nem nyúlunk
+        
     }
 }
