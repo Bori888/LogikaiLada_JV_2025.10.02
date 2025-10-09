@@ -44,7 +44,6 @@ public class LogikaiLadaTeszt {
     private void vezerloKivalasztottLadaVisszajelzesTeszt() {
         TestKornyezet k = ujKornyezet();
 
-        
         k.nezet.getRBronzbanVanAKincs().setSelected(true);
         k.nezet.getBtnEllenoriz().doClick();
         assert k.nezet.getTxtEredmeny().getText().contains("Gratulálunk") :
@@ -136,7 +135,6 @@ public class LogikaiLadaTeszt {
         return new TestKornyezet(nezet, vezerlo);
     }
 
-
     private static class TestKornyezet {
 
         GuiLadaNezet nezet;
@@ -161,7 +159,6 @@ public class LogikaiLadaTeszt {
     }
 
     private static void tesztHaromLadaEgyKincs() {
-
         GuiLadaNezet nezet = new GuiLadaNezet();
         new LadaVezerlo(nezet);
 
