@@ -127,6 +127,24 @@ A következő állítások alapján kell meghatározni, hogy hol van a kincs:
 
 **Tehát a kincs a Bronz ládában található.**
 
+---
+
+##Kincses ládák - tesztelés
+
+Modell: 
+
+minden ládán van felirat
+a feliratok szövegébe aranynál "én rejtem", ezüstnél "nem én rejtem", bronznál "arany hazudik" 
+szövegrészek megtalálhatóak
+van pontosan 3 láda, csak az egyikben van kincs
+ha nem létező ládára hivatkozunk, azt hogyan kezeli a program?
+Vezérlő:
+
+a kiválasztott ládára megfelelő visszajelzést kapunk (benne a kincs, nincs benne)
+a visszajelzés szövege megfelelő ("Gratulálunk...", "Sajnos  nem nyert...")
+ládára való hivatkozásnál mi történik, ha szöveget adunk meg a szám helyett (v fordítva)
+
+---
 
 ## Csapat tagok
 - Ilyés Borbála  
