@@ -9,8 +9,8 @@ public class LadaVezerlo {
     private GuiLadaNezet nezet;
 
     // Üzenetek konstansokként, hogy a teszt is ugyanazt használja
-    public static final String UZENET_NYERT = "Gratulálunk, nyertél!";
-    public static final String UZENET_NEM_NYERT = "Sajnálom, nem abban a ládában van a kincs.";
+    public static final String UZENET_NYERT = "Gratulálok! Megtaláltad azt a ládát, amiben van a kincs!";
+    public static final String UZENET_NEM_NYERT = "Sajnálom, nem ebben a ládában van a kincs!";
     public static final String UZENET_VALASSZ = "Kérlek, válassz egy ládát!";
 
     public LadaVezerlo(GuiLadaNezet nezet) {
